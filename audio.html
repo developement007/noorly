@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Audio - Noorly</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <h1>Noorly</h1>
+  </header>
+
+  <main>
+    <section id="audio">
+      <h2>Islamic Audio</h2>
+      <div class="audio-categories">
+        <div class="audio-category">
+          <h3>Athan (Call to Prayer)</h3>
+          <div class="audio-list">
+            <div class="audio-item">
+              <span>Makkah Athan</span>
+              <button class="play-btn" onclick="playAudio('athan-makkah')">Play</button>
+            </div>
+            <div class="audio-item">
+              <span>Madinah Athan</span>
+              <button class="play-btn" onclick="playAudio('athan-madinah')">Play</button>
+            </div>
+          </div>
+        </div>
+        <div class="audio-category">
+          <h3>Quran Recitations</h3>
+          <div class="audio-list">
+            <div class="audio-item">
+              <span>Surah Al-Fatihah - Sheikh Sudais</span>
+              <button class="play-btn" onclick="playAudio('recitation-fatihah')">Play</button>
+            </div>
+            <div class="audio-item">
+              <span>Surah Al-Ikhlas - Sheikh Sudais</span>
+              <button class="play-btn" onclick="playAudio('recitation-ikhlas')">Play</button>
+            </div>
+          </div>
+        </div>
+        <div class="audio-category">
+          <h3>Islamic Lectures</h3>
+          <div class="audio-list">
+            <div class="audio-item">
+              <span>Introduction to Islam</span>
+              <button class="play-btn" onclick="playAudio('lecture-intro')">Play</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <audio id="audio-player" controls style="display: none;"></audio>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Noorly</p>
+  </footer>
+
+  <script src="js/audio.js"></script>
+</body>
+</html></content>
+<parameter name="filePath">/Users/hassanelghannam/Documents/projects/noorly/audio.html

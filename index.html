@@ -9,18 +9,37 @@
 <body>
   <header>
     <h1>Noorly</h1>
-    <nav>
-      <a href="prayer.html">Prayer Times</a>
-      <a href="quran.html">Quran</a>
-      <a href="tasbeeh.html">Tasbeeh</a>
-      <a href="about.html">About</a>
-    </nav>
   </header>
 
   <main>
-    <section id="welcome">
-      <h2>Welcome to Noorly</h2>
-      <p>Your all-in-one app for prayers, Quran, and Dhikr.</p>
+    <section id="dashboard">
+      <div id="greeting" class="greeting"></div>
+      
+      <div class="prayer-times">
+        <h3>Today's Prayer Times</h3>
+        <div id="prayer-list" class="prayer-list"></div>
+      </div>
+      
+      <div id="next-prayer" class="next-prayer"></div>
+      
+      <div class="feature-buttons">
+        <a href="qibla.html" class="feature-btn">
+          <div class="btn-icon">🧭</div>
+          <div class="btn-text">Qibla</div>
+        </a>
+        <a href="quran.html" class="feature-btn">
+          <div class="btn-icon">📖</div>
+          <div class="btn-text">Quran</div>
+        </a>
+        <a href="audio.html" class="feature-btn">
+          <div class="btn-icon">🎵</div>
+          <div class="btn-text">Audio</div>
+        </a>
+        <a href="tasbeeh.html" class="feature-btn">
+          <div class="btn-icon">📿</div>
+          <div class="btn-text">Tasbih</div>
+        </a>
+      </div>
     </section>
   </main>
 
@@ -28,6 +47,6 @@
     <p>&copy; 2026 Noorly</p>
   </footer>
 
-  <script src="js/main.js"></script>
+  <script src="js/index.js"></script>
 </body>
 </html>
