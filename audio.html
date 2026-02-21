@@ -4,70 +4,77 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Audio - Noorly</title>
-  <link rel="stylesheet" href="css/style.css">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Roboto', sans-serif; }
+    h1, h2, h3 { font-family: 'Poppins', sans-serif; }
+  </style>
 </head>
 <body>
   <header>
-    <nav>
-      <div class="nav-container">
-        <h1 class="logo">Noorly</h1>
-        <ul class="nav-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="prayer.html">Prayer Times</a></li>
-          <li><a href="tasbeeh.html">Tasbeeh</a></li>
-          <li><a href="quran.html">Quran</a></li>
+    <nav class="fixed top-0 w-full bg-white dark:bg-gray-800 shadow-lg z-50 transition-colors duration-300">
+      <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+        <h1 class="text-2xl font-bold text-blue-600 dark:text-blue-400">Noorly</h1>
+        <ul class="hidden md:flex space-x-8">
+          <li><a href="index.html" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition duration-300">Home</a></li>
+          <li><a href="prayer.html" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition duration-300">Prayer Times</a></li>
+          <li><a href="tasbeeh.html" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition duration-300">Tasbeeh</a></li>
+          <li><a href="quran.html" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition duration-300">Quran</a></li>
         </ul>
-        <button id="theme-toggle" class="theme-toggle">🌙</button>
+        <button id="theme-toggle" class="text-2xl focus:outline-none">🌙</button>
       </div>
     </nav>
   </header>
 
-  <main>
-    <section id="audio">
-      <h2>Islamic Audio</h2>
-      <div class="audio-categories">
-        <div class="audio-category">
-          <h3>Athan (Call to Prayer)</h3>
-          <div class="audio-list">
-            <div class="audio-item">
-              <span>Makkah Athan</span>
-              <button class="play-btn" onclick="playAudio('athan-makkah')">Play</button>
-            </div>
-            <div class="audio-item">
-              <span>Madinah Athan</span>
-              <button class="play-btn" onclick="playAudio('athan-madinah')">Play</button>
-            </div>
+  <main class="pt-20 bg-gray-50 dark:bg-gray-900 min-h-screen transition-colors duration-300">
+    <section class="max-w-4xl mx-auto py-12 px-4">
+      <h2 class="text-3xl font-bold text-center mb-8 text-blue-600 dark:text-blue-400">Islamic Audio</h2>
+      
+      <div class="mb-8">
+        <h3 class="text-2xl font-semibold mb-4 text-gray-800 dark:text-gray-200">Athan (Call to Prayer)</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-4 flex justify-between items-center">
+            <span class="text-lg font-medium text-gray-900 dark:text-gray-100">Makkah Athan</span>
+            <button class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition duration-300" onclick="playAudio('athan-makkah')">Play</button>
           </div>
-        </div>
-        <div class="audio-category">
-          <h3>Quran Recitations</h3>
-          <div class="audio-list">
-            <div class="audio-item">
-              <span>Surah Al-Fatihah - Sheikh Sudais</span>
-              <button class="play-btn" onclick="playAudio('recitation-fatihah')">Play</button>
-            </div>
-            <div class="audio-item">
-              <span>Surah Al-Ikhlas - Sheikh Sudais</span>
-              <button class="play-btn" onclick="playAudio('recitation-ikhlas')">Play</button>
-            </div>
-          </div>
-        </div>
-        <div class="audio-category">
-          <h3>Islamic Lectures</h3>
-          <div class="audio-list">
-            <div class="audio-item">
-              <span>Introduction to Islam</span>
-              <button class="play-btn" onclick="playAudio('lecture-intro')">Play</button>
-            </div>
+          <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-4 flex justify-between items-center">
+            <span class="text-lg font-medium text-gray-900 dark:text-gray-100">Madinah Athan</span>
+            <button class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition duration-300" onclick="playAudio('athan-madinah')">Play</button>
           </div>
         </div>
       </div>
-      <audio id="audio-player" controls style="display: none;"></audio>
+      
+      <div class="mb-8">
+        <h3 class="text-2xl font-semibold mb-4 text-gray-800 dark:text-gray-200">Quran Recitations</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-4 flex justify-between items-center">
+            <span class="text-lg font-medium text-gray-900 dark:text-gray-100">Surah Al-Fatihah - Sheikh Sudais</span>
+            <button class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition duration-300" onclick="playAudio('recitation-fatihah')">Play</button>
+          </div>
+          <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-4 flex justify-between items-center">
+            <span class="text-lg font-medium text-gray-900 dark:text-gray-100">Surah Al-Ikhlas - Sheikh Sudais</span>
+            <button class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition duration-300" onclick="playAudio('recitation-ikhlas')">Play</button>
+          </div>
+        </div>
+      </div>
+      
+      <div>
+        <h3 class="text-2xl font-semibold mb-4 text-gray-800 dark:text-gray-200">Islamic Lectures</h3>
+        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-4 flex justify-between items-center">
+          <span class="text-lg font-medium text-gray-900 dark:text-gray-100">Introduction to Islam</span>
+          <button class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition duration-300" onclick="playAudio('lecture-intro')">Play</button>
+        </div>
+      </div>
+      
+      <audio id="audio-player" controls class="hidden mt-8 w-full"></audio>
     </section>
   </main>
 
-  <footer>
-    <p>&copy; 2026 Noorly</p>
+  <footer class="bg-gray-800 dark:bg-gray-900 text-white py-6">
+    <div class="max-w-7xl mx-auto text-center px-4">
+      <p>&copy; 2026 Noorly. All rights reserved.</p>
+    </div>
   </footer>
 
   <script src="js/theme.js"></script>

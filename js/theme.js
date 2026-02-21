@@ -5,14 +5,20 @@ document.addEventListener('DOMContentLoaded', function() {
 
   const currentTheme = localStorage.getItem('theme') || 'light';
 
-  document.documentElement.setAttribute('data-theme', currentTheme);
+  if (currentTheme === 'dark') {
+    document.documentElement.classList.add('dark');
+  }
   updateThemeIcon(currentTheme);
 
   themeToggle.addEventListener('click', function() {
-    const currentTheme = document.documentElement.getAttribute('data-theme');
-    const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+    const isDark = document.documentElement.classList.contains('dark');
+    const newTheme = isDark ? 'light' : 'dark';
 
-    document.documentElement.setAttribute('data-theme', newTheme);
+    if (newTheme === 'dark') {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
     localStorage.setItem('theme', newTheme);
     updateThemeIcon(newTheme);
   });

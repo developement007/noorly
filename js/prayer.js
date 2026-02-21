@@ -61,40 +61,67 @@ function displayPrayerTimes(timings, date) {
   document.getElementById('status').innerHTML = `Prayer Times for ${date}`;
   const display = document.getElementById('times-display');
   display.innerHTML = `
-    <div class="prayer-grid">
-      <div class="prayer-card">
-        <h3>Fajr</h3>
-        <p>${timings.Fajr}</p>
+    <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-2xl p-8 text-center transform hover:scale-105 transition-all duration-300 border border-gray-100 dark:border-gray-700">
+      <div class="w-16 h-16 bg-blue-100 dark:bg-blue-900 rounded-2xl flex items-center justify-center mx-auto mb-4">
+        <svg class="w-8 h-8 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+        </svg>
       </div>
-      <div class="prayer-card">
-        <h3>Sunrise</h3>
-        <p>${timings.Sunrise}</p>
+      <h3 class="text-xl font-bold text-blue-600 dark:text-blue-400 mb-3">Fajr</h3>
+      <p class="text-3xl font-bold text-gray-900 dark:text-white mb-2">${timings.Fajr}</p>
+      <p class="text-sm text-gray-500 dark:text-gray-400">Dawn Prayer</p>
+    </div>
+    <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-2xl p-8 text-center transform hover:scale-105 transition-all duration-300 border border-gray-100 dark:border-gray-700">
+      <div class="w-16 h-16 bg-orange-100 dark:bg-orange-900 rounded-2xl flex items-center justify-center mx-auto mb-4">
+        <svg class="w-8 h-8 text-orange-600 dark:text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+        </svg>
       </div>
-      <div class="prayer-card">
-        <h3>Dhuhr</h3>
-        <p>${timings.Dhuhr}</p>
+      <h3 class="text-xl font-bold text-orange-600 dark:text-orange-400 mb-3">Sunrise</h3>
+      <p class="text-3xl font-bold text-gray-900 dark:text-white mb-2">${timings.Sunrise}</p>
+      <p class="text-sm text-gray-500 dark:text-gray-400">End of Fajr</p>
+    </div>
+    <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-2xl p-8 text-center transform hover:scale-105 transition-all duration-300 border border-gray-100 dark:border-gray-700">
+      <div class="w-16 h-16 bg-green-100 dark:bg-green-900 rounded-2xl flex items-center justify-center mx-auto mb-4">
+        <svg class="w-8 h-8 text-green-600 dark:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+        </svg>
       </div>
-      <div class="prayer-card">
-        <h3>Asr</h3>
-        <p>${timings.Asr}</p>
+      <h3 class="text-xl font-bold text-green-600 dark:text-green-400 mb-3">Dhuhr</h3>
+      <p class="text-3xl font-bold text-gray-900 dark:text-white mb-2">${timings.Dhuhr}</p>
+      <p class="text-sm text-gray-500 dark:text-gray-400">Noon Prayer</p>
+    </div>
+    <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-2xl p-8 text-center transform hover:scale-105 transition-all duration-300 border border-gray-100 dark:border-gray-700">
+      <div class="w-16 h-16 bg-purple-100 dark:bg-purple-900 rounded-2xl flex items-center justify-center mx-auto mb-4">
+        <svg class="w-8 h-8 text-purple-600 dark:text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+        </svg>
       </div>
-      <div class="prayer-card">
-        <h3>Maghrib</h3>
-        <p>${timings.Maghrib}</p>
+      <h3 class="text-xl font-bold text-purple-600 dark:text-purple-400 mb-3">Asr</h3>
+      <p class="text-3xl font-bold text-gray-900 dark:text-white mb-2">${timings.Asr}</p>
+      <p class="text-sm text-gray-500 dark:text-gray-400">Afternoon Prayer</p>
+    </div>
+    <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-2xl p-8 text-center transform hover:scale-105 transition-all duration-300 border border-gray-100 dark:border-gray-700">
+      <div class="w-16 h-16 bg-red-100 dark:bg-red-900 rounded-2xl flex items-center justify-center mx-auto mb-4">
+        <svg class="w-8 h-8 text-red-600 dark:text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+        </svg>
       </div>
-      <div class="prayer-card">
-        <h3>Isha</h3>
-        <p>${timings.Isha}</p>
+      <h3 class="text-xl font-bold text-red-600 dark:text-red-400 mb-3">Maghrib</h3>
+      <p class="text-3xl font-bold text-gray-900 dark:text-white mb-2">${timings.Maghrib}</p>
+      <p class="text-sm text-gray-500 dark:text-gray-400">Sunset Prayer</p>
+    </div>
+    <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-2xl p-8 text-center transform hover:scale-105 transition-all duration-300 border border-gray-100 dark:border-gray-700">
+      <div class="w-16 h-16 bg-indigo-100 dark:bg-indigo-900 rounded-2xl flex items-center justify-center mx-auto mb-4">
+        <svg class="w-8 h-8 text-indigo-600 dark:text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+        </svg>
       </div>
+      <h3 class="text-xl font-bold text-indigo-600 dark:text-indigo-400 mb-3">Isha</h3>
+      <p class="text-3xl font-bold text-gray-900 dark:text-white mb-2">${timings.Isha}</p>
+      <p class="text-sm text-gray-500 dark:text-gray-400">Night Prayer</p>
     </div>
   `;
-
-  // Handle notifications
-  const notificationsEnabled = document.getElementById('notifications').checked;
-  if (notificationsEnabled) {
-    requestNotificationPermission();
-    scheduleNotifications(timings);
-  }
 }
 
 function requestNotificationPermission() {
