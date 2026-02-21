@@ -1,6 +1,8 @@
 // Theme toggle functionality
 document.addEventListener('DOMContentLoaded', function() {
   const themeToggle = document.getElementById('theme-toggle');
+  if (!themeToggle) return;
+
   const currentTheme = localStorage.getItem('theme') || 'light';
 
   document.documentElement.setAttribute('data-theme', currentTheme);
@@ -18,5 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 function updateThemeIcon(theme) {
   const themeToggle = document.getElementById('theme-toggle');
-  themeToggle.textContent = theme === 'light' ? '🌙' : '☀️';
+  if (themeToggle) {
+    themeToggle.textContent = theme === 'light' ? '🌙' : '☀️';
+  }
 }

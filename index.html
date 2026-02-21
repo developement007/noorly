@@ -8,45 +8,33 @@
 </head>
 <body>
   <header>
-    <h1>Noorly</h1>
+    <nav>
+      <div class="nav-container">
+        <h1 class="logo">Noorly</h1>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="prayer.html">Prayer Times</a></li>
+          <li><a href="tasbeeh.html">Tasbeeh</a></li>
+          <li><a href="quran.html">Quran</a></li>
+        </ul>
+        <button id="theme-toggle" class="theme-toggle">🌙</button>
+      </div>
+    </nav>
   </header>
 
   <main>
-    <section id="dashboard">
-      <div id="greeting" class="greeting"></div>
-      
-      <div class="prayer-times">
-        <h3>Today's Prayer Times</h3>
-        <div id="prayer-list" class="prayer-list"></div>
-      </div>
-      
-      <div id="next-prayer" class="next-prayer"></div>
-      
-      <div class="feature-buttons">
-        <a href="qibla.html" class="feature-btn">
-          <div class="btn-icon">🧭</div>
-          <div class="btn-text">Qibla</div>
-        </a>
-        <a href="quran.html" class="feature-btn">
-          <div class="btn-icon">📖</div>
-          <div class="btn-text">Quran</div>
-        </a>
-        <a href="audio.html" class="feature-btn">
-          <div class="btn-icon">🎵</div>
-          <div class="btn-text">Audio</div>
-        </a>
-        <a href="tasbeeh.html" class="feature-btn">
-          <div class="btn-icon">📿</div>
-          <div class="btn-text">Tasbih</div>
-        </a>
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Welcome to Noorly</h1>
+        <p>Your all-in-one Muslim app for prayers, Quran, and Dhikr.</p>
+        <div class="hero-buttons">
+          <a href="prayer.html" class="btn btn-primary">View Prayer Times</a>
+          <a href="quran.html" class="btn btn-secondary">Read Quran</a>
+        </div>
       </div>
     </section>
   </main>
 
   <footer>
-    <p>&copy; 2026 Noorly</p>
+    <p>&copy; 2026 Noorly. All rights reserved.</p>
   </footer>
-
-  <script src="js/index.js"></script>
-</body>
-</html>

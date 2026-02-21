@@ -8,19 +8,27 @@
 </head>
 <body>
   <header>
-    <h1>Noorly</h1>
     <nav>
-      <a href="index.html">Home</a>
-      <a href="prayer.html">Prayer Times</a>
-      <a href="quran.html">Quran</a>
-      <a href="tasbeeh.html">Tasbeeh</a>
-      <a href="about.html">About</a>
+      <div class="nav-container">
+        <h1 class="logo">Noorly</h1>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="prayer.html">Prayer Times</a></li>
+          <li><a href="tasbeeh.html">Tasbeeh</a></li>
+          <li><a href="quran.html">Quran</a></li>
+        </ul>
+        <button id="theme-toggle" class="theme-toggle">🌙</button>
+      </div>
     </nav>
   </header>
 
   <main>
     <section id="prayer-times">
       <h2>Today's Prayer Times</h2>
+      <div class="notification-toggle">
+        <label for="notifications">Enable Prayer Reminders:</label>
+        <input type="checkbox" id="notifications">
+      </div>
       <div id="status">Detecting your location...</div>
       <div id="times-display"></div>
     </section>
@@ -30,6 +38,7 @@
     <p>&copy; 2026 Noorly</p>
   </footer>
 
+  <script src="js/theme.js"></script>
   <script src="js/prayer.js"></script>
 </body>
 </html></content>

@@ -1,7 +1,15 @@
 // Prayer times functionality
 document.addEventListener('DOMContentLoaded', function() {
   getLocationAndFetchTimes();
+  document.getElementById('notifications').addEventListener('change', handleNotificationToggle);
 });
+
+function handleNotificationToggle() {
+  const enabled = document.getElementById('notifications').checked;
+  if (enabled) {
+    requestNotificationPermission();
+  }
+}
 
 function getLocationAndFetchTimes() {
   if (navigator.geolocation) {
@@ -80,5 +88,47 @@ function displayPrayerTimes(timings, date) {
       </div>
     </div>
   `;
+
+  // Handle notifications
+  const notificationsEnabled = document.getElementById('notifications').checked;
+  if (notificationsEnabled) {
+    requestNotificationPermission();
+    scheduleNotifications(timings);
+  }
+}
+
+function requestNotificationPermission() {
+  if ('Notification' in window) {
+    Notification.requestPermission();
+  }
+}
+
+function scheduleNotifications(timings) {
+  if (Notification.permission !== 'granted') return;
+
+  const now = new Date();
+  const prayers = [
+    { name: 'Fajr', time: timings.Fajr },
+    { name: 'Dhuhr', time: timings.Dhuhr },
+    { name: 'Asr', time: timings.Asr },
+    { name: 'Maghrib', time: timings.Maghrib },
+    { name: 'Isha', time: timings.Isha }
+  ];
+
+  prayers.forEach(prayer => {
+    const [hours, minutes] = prayer.time.split(':').map(Number);
+    const prayerTime = new Date(now);
+    prayerTime.setHours(hours, minutes, 0, 0);
+
+    if (prayerTime > now) {
+      const delay = prayerTime - now;
+      setTimeout(() => {
+        new Notification(`Time for ${prayer.name} prayer`, {
+          body: 'It\'s time to pray',
+          icon: 'assets/images/icon.png' // Assuming an icon exists
+        });
+      }, delay);
+    }
+  });
 }</content>
 <parameter name="filePath">/Users/hassanelghannam/Documents/projects/noorly/js/prayer.js
